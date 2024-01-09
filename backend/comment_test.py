@@ -1,0 +1,20 @@
+from error import InputError, AccessError
+import sys
+import psycopg2
+import random
+import re
+import string
+import hashlib
+import jwt
+import datetime
+import comment
+
+token666 = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IjY2NkBxcS5jb20iLCJwYXNzd29yZCI6IjEyMzQ1Nnh5eiEhISIsImZpcnN0X25hbWUiOiJzdGUiLCJsYXN0X25hbWUiOiJ6aCJ9.E0JSF8oAxB9j2O68ZUkk6EAAKhnzZFpQ4QytH4U2qwM'
+token555 = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IjU1NUBxcS5jb20iLCJwYXNzd29yZCI6IjEyMzQ1Nnh5eiEhISIsImZpcnN0X25hbWUiOiJzdGUiLCJsYXN0X25hbWUiOiJ6aCJ9.M-jxXvyjS8KBwJHt01dfBm8uricM_AdWq9B2U_r2_BU'
+token777 = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Ijc3N0BxcS5jb20iLCJwYXNzd29yZCI6IjEyMzQ1Nnh5eiEhISIsImZpcnN0X25hbWUiOiJzdGUiLCJsYXN0X25hbWUiOiJ6aCJ9.iq4LmYtiPUZiBN240XEye8I9VRHwxwu86cHdowOKaD4'
+token888 = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Ijg4OEBxcS5jb20iLCJwYXNzd29yZCI6IjEyMzQ1Nnh5eiEhISIsImZpcnN0X25hbWUiOiJzdGUiLCJsYXN0X25hbWUiOiJ6aCJ9.u14PyWEuUaspOJRY5_6fISHUsWlSKsNl_jI-sQmMKMQ'
+
+comment_input1 = {
+    'email' : '666@qq.com',
+    'token' : token666
+}
